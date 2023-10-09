@@ -11,20 +11,27 @@ knitr:
 ---
 
 1. The probability of completing a difficult PhD program is 0.7.  Calculate the probability that in a cohort of 29 students, 3 or fewer students do not complete the degree.
-
+[3 of 29] -> Binomial 
+x ~ binomial (N= 29, p= 0.7, p -> in terms of completing 
+P(X = 29,28,27,26) or P(X>=26) =
+pbinom(in R) 1-P(X<26), Pbinom(
 ```{r}
-
+1- pbinom(25, 28, 0.7)
+sum(dbinom(26:29, 29, 0.7))
+pbinom(3,29,0.3)
 ```
 
 1. In this difficult program, students complete the degree after 5 years (no variation).  A professor decides to stop taking new students after advising 10 students to completion.  She also decides to retire after all of her active students graduate.  If the professor only takes 1 student a year (at the start of the program), what is the probability that the professor will be retired in 20 years?
+
 ```{r}
 
 ```
 
 
 1. 3 prizes are awarded to the first 3 correct solutions of a difficult problem.  Suppose the probability of a correct solution is 0.1.  What is the probability that all three prizes will be awarded by the 25th submission?
+W~ NegBinomial(k = 3, p = 0.1)
 ```{r}
-
+pnbinom(22, 3, 0.1)
 ```
 
 
